@@ -10,6 +10,15 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
+            GenericList<string> clothingList = new GenericList<string>();
+            clothingList.Add("Shirt");
+
+
+
+            /*List<int> intList = new List<int>() { 1, 2 };
+            int howMany = intList.Count;*/
+
+
         }
     }
 }

@@ -6,18 +6,48 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    public class CustomList<T>
+    public class GenericList<T>
     {
         //member var
-        private T[] items;
+        private T[] array;
+        public int Capacity { get; set; }
+        public int Count;
 
         //constructor
-        public CustomList()
+        public GenericList()
         {
-            items = new T[5];
+            Count = 0;
+            array = new T[3];
         }
 
-        //member methods
+        public T this[int i]
+        {
+            get { return array[i]; }
+        }
+
+        public void Add(T items)
+        {
+            // take our array that exists on our class
+            // add the item (parameter) that is being passed into this method
+            // to our array
+
+            // incrament the count after adding the value to the array
+            // count will represent the index in which to add the new item to the array
+
+            array[Count] = items;
+            Count++;
+
+        }
+
+        public void Remove(T items)
+        {
+
+        }
+
+
+
+
+
 
     }
 }

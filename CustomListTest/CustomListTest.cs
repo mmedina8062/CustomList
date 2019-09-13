@@ -12,7 +12,7 @@ namespace CustomListTest
         {
 
             //arrange
-            CustomList<string> clothingList = new CustomList<string>();
+            GenericList<string> clothingList = new GenericList<string>();
             string expected = "Shirt";
             string actual;
 
@@ -25,10 +25,52 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
         }
 
-        public void Add_AddItemToEmptyList_ItemGoesToIndexOne()
+        [TestMethod]
+        public void Add_AddItemToEmptyList_ItemGoesToIndexZero()
+        {
+
+            //arrange
+            GenericList<string> clothingList = new GenericList<string>();
+            int expected = 4;
+            int actual;
+
+            //act
+            clothingList.Add("Shirt");
+            clothingList.Add("Pants");
+            clothingList.Add("Shoes");
+            clothingList.Add("Hat");
+            actual = clothingList.Count;
+
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetItemsAddedToList()
+        {
+
+            //arrange
+            GenericList<string> clothingList = new GenericList<string>();
+            int expected = 1;
+            int actual;
+
+            //act
+            clothingList.Add("Shirt");
+            actual = clothingList.Count;
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}
+
+        /*public void Add_AddItemToEmptyList_ItemGoesToIndexOne()
         {
             //arrange
-            CustomList<string> clothingList = new CustomList<string>();
+            GenericList<string> clothingList = new GenericList<string>();
             string expected = "Pants";
             string actual;
 
@@ -44,7 +86,7 @@ namespace CustomListTest
         public void Add_AddItemToEmptyList_ItemGoesToIndexTwo()
         {
             //arrange
-            CustomList<string> clothingList = new CustomList<string>();
+            GenericList<string> clothingList = new GenericList<string>();
             string expected = "Jacket";
             string actual;
 
@@ -60,7 +102,7 @@ namespace CustomListTest
         public void Add_AddItemToEmptyList_ItemGoesToIndexThree()
         {
             //arrange
-            CustomList<string> clothingList = new CustomList<string>();
+            GenericList<string> clothingList = new GenericList<string>();
             string expected = "Hat";
             string actual;
 
@@ -76,7 +118,7 @@ namespace CustomListTest
         public void Add_AddItemToEmptyList_ItemGoesToIndexFour()
         {
             //arrange
-            CustomList<string> clothingList = new CustomList<string>();
+            GenericList<string> clothingList = new GenericList<string>();
             string expected = "Socks";
             string actual;
 
@@ -92,54 +134,38 @@ namespace CustomListTest
         public void Add_AddItemToEmptyList_ItemGoesToIndexFive()
         {
             //arrange
-            CustomList<string> clothingList = new CustomList<string>();
+            GenericList<string> clothingItems = new GenericList<string>();
             string expected = "Shoes";
             string actual;
 
             //act
-            clothingList.Add("Shoes");
-            actual = clothingList[5];
+            clothingItems.Add("Shoes");
+            actual = clothingItems[5];
 
 
             //assert
             Assert.AreEqual(expected, actual);
         }
-        public void Add_AddNumberToEmptyList_CountIncrementsByOne()
+        public void Add_AmountOfClothingBoughtToEmptyList_CountIncrementsByOne()
         {
             //arrange
-            CustomList<int> OddDoubleDigitNumbersList = new CustomList<int>();
+            GenericList<int> AmountOfClothingBought = new GenericList<int>();
             int expected = 1;
             int actual;
 
             //act
-            OddDoubleDigitNumbersList.Add(11);
-            actual = OddDoubleDigitNumbersList.Count;
+            AmountOfClothingBought.Add(2);
+            actual = AmountOfClothingBought.Count;
 
 
             //assert
             Assert.AreEqual(expected, actual);
         }
 
-        public void Subtract_SubtractItemFromList_StartAtIndexZero()
+        public void Remove_RemoveAmountOfClothingBoughtFromList_StartAtEndOfIndex()
         {
             //arrange
-            CustmonList<string> clothingList = new CustmonList<string>();
-            string expected = "Shirt";
-            string actual;
-
-            //act
-            clothingList.Subtract("Shirt");
-            actual = clothingList.Count;
-
-
-            //assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        public void Subtract_SubtractNumberFromList_StartAtEndOfList()
-        {
-            //arrange
-            CustomList<int> OddDoubleDigitNumbersList = new CustomList<int>();
+            GenericList<int> OddDoubleDigitNumbersList = new GenericList<int>();
             int expected = 19;
             int actual;
 
@@ -160,3 +186,4 @@ namespace CustomListTest
 }
     
 
+*/
