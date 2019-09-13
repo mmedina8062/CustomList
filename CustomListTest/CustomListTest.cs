@@ -26,7 +26,7 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void Add_AddItemToEmptyList_ItemGoesToIndexZero()
+        public void AddRestOfClothingItemsToArray()
         {
 
             //arrange

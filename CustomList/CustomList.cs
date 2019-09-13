@@ -28,7 +28,7 @@ namespace CustomList
         public void Add(T items)
         {
             // check the capacity of our array - do this below this comment using an if statement
-            if (Count > array.Length)
+            if (Count == array.Length)
             {
                 IncreaseArraySize();
             }
@@ -44,7 +44,15 @@ namespace CustomList
 
         private void IncreaseArraySize()
         {
-            // TODO
+            T[] tempArray = array;
+            array = new T[array.Length + 4];
+
+            for (int i = 0; i < tempArray.Length; i++)
+            {
+                array[i] = tempArray[i];
+            }
+
+
         }
 
         public void Remove(T items)
