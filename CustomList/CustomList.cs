@@ -27,16 +27,24 @@ namespace CustomList
 
         public void Add(T items)
         {
-            // take our array that exists on our class
-            // add the item (parameter) that is being passed into this method
-            // to our array
+            // check the capacity of our array - do this below this comment using an if statement
+            if (Count > array.Length)
+            {
+                IncreaseArraySize();
+            }
 
-            // incrament the count after adding the value to the array
-            // count will represent the index in which to add the new item to the array
+            // if no more room is left to add a new item, we need to make our array have more spots - aka if we
+            // enter our if statement becuase there is no more room left - call the IncreaseArraySizeMethod
+
 
             array[Count] = items;
             Count++;
 
+        }
+
+        private void IncreaseArraySize()
+        {
+            // TODO
         }
 
         public void Remove(T items)
