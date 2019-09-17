@@ -27,15 +27,10 @@ namespace CustomList
 
         public void Add(T items)
         {
-            // check the capacity of our array - do this below this comment using an if statement
             if (Count == array.Length)
             {
                 IncreaseArraySize();
             }
-
-            // if no more room is left to add a new item, we need to make our array have more spots - aka if we
-            // enter our if statement becuase there is no more room left - call the IncreaseArraySizeMethod
-
 
             array[Count] = items;
             Count++;
@@ -44,26 +39,81 @@ namespace CustomList
 
         private void IncreaseArraySize()
         {
-            T[] tempArray = array;
+            T[] NewArraySize = array;
             array = new T[array.Length + 4];
 
-            for (int i = 0; i < tempArray.Length; i++)
+            for (int i = 0; i < NewArraySize.Length; i++)
             {
-                array[i] = tempArray[i];
+                array[i] = NewArraySize[i];
             }
-
-
         }
 
-        public void Remove(T items)
+        public bool Remove(T item)
         {
 
+
+            // is the item there at all?
+            // if so, remove
+
+            for (int i = 0; i < Count; i++)
+            {
+                if (array.Contains(item)) //items matches array[i] )
+                {
+                    // grab the next value
+                    array[i] = array[i + 1];
+                    Count--;
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
+
+        }
+        public override string ToString() 
+        {
+            T[] NewArray1 = array;
+            T[] NewArray2 = array;
+
+            for (int i = 0; i<array.Length; i++)
+            {
+                array[i] = NewArray1[i];
+                array[i] = NewArray2[i];   
+
+            }
+            return NewArray1 + " " + NewArray2;
         }
 
-
-
-
-
-
     }
+
 }
+        
+
+
+        
+       /* public void DecreasedArraySize(T items)
+        {
+            T[] DecreaseArraySize = array;
+            array = new T[array.Length - 1];
+
+            for (int i = 0; i < DecreaseArraySize.Length; i++)
+            {
+                
+                array[i - 1] = DecreaseArraySize[i - 1];
+                Count--;
+
+                
+                
+            }
+            
+        }*/
+
+
+
+
+
+
+  
+
